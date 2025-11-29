@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4cgml8tx16js"]
+
+[ext_resource type="Script" uid="uid://beqetitw3cvbu" path="res://Scripts/Map/MapGeneration/RoomScript/Room_script.gd" id="1_n7cnu"]
+
+[node name="CorridorStraight01" type="Node3D"]
+script = ExtResource("1_n7cnu")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+size = Vector3(20, 1, 20)
+
+[node name="AnchorPoint" type="Node" parent="."]
+
+[node name="AnchorPoint_01" type="Node3D" parent="AnchorPoint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+
+[node name="AnchorPoint_02" type="Node3D" parent="AnchorPoint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+
+[node name="AnchorPoint_03" type="Node3D" parent="AnchorPoint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)

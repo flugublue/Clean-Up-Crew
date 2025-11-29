@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://ciojn1nj6uw16"]
+
+[ext_resource type="PackedScene" uid="uid://d3waox2pno7e8" path="res://scenes/Terrain/Debug/Debug_terrain.tscn" id="1_2ittr"]
+[ext_resource type="PackedScene" uid="uid://t3c3xnckcie3" path="res://scenes/Player/Player_character.tscn" id="2_fpg18"]
+[ext_resource type="PackedScene" uid="uid://gu7c608ic8j4" path="res://scenes/Props/Prop_test_big.tscn" id="3_mwggt"]
+[ext_resource type="PackedScene" uid="uid://d012ebu82jtgx" path="res://scenes/Terrain/RandomTerrain/Random_terrain_generation.tscn" id="4_mwggt"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mwggt"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_wxtdc"]
+sky_material = SubResource("ProceduralSkyMaterial_mwggt")
+
+[sub_resource type="Environment" id="Environment_1mcn3"]
+background_mode = 2
+sky = SubResource("Sky_wxtdc")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Gameplay_debug" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.762896, 0.5521837, -0.3362783, 0.0047161416, 0.52487403, 0.85116696, 0.6465041, 0.64776576, -0.4030284, 0, 11.312822, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1mcn3")
+
+[node name="Debug_terrain" parent="." instance=ExtResource("1_2ittr")]
+visible = false
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("2_fpg18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.076555, -1.236691)
+
+[node name="Props" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2857094, 5.4348116, 0.25113106)
+
+[node name="Prop_test_big" parent="Props" instance=ExtResource("3_mwggt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9531469, 8.595016, 2.9367862)
+
+[node name="Prop_test_big2" parent="Props" instance=ExtResource("3_mwggt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9531469, 9.999616, 2.9367862)
+
+[node name="Prop_test_big3" parent="Props" instance=ExtResource("3_mwggt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9531469, 8.595016, 0.8512058)
+
+[node name="Prop_test_big4" parent="Props" instance=ExtResource("3_mwggt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9531469, 8.595016, 4.7474484)
+
+[node name="Prop_test_big5" parent="Props" instance=ExtResource("3_mwggt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4255972, 8.595016, 2.9367862)
+
+[node name="Prop_test_big6" parent="Props" instance=ExtResource("3_mwggt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50083447, 11.938909, 2.9367862)
+
+[node name="Prop_test_big7" parent="Props" instance=ExtResource("3_mwggt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.017349243, 10.002557, 2.9367862)
+
+[node name="Prop_test_big8" parent="Props" instance=ExtResource("3_mwggt")]
+transform = Transform3D(1, 0, 0, 0, 0.9982789, -0.058644302, 0, 0.058644302, 0.9982789, -2.1070547, 10.344741, 2.9367862)
+
+[node name="Prop_test_big9" parent="Props" instance=ExtResource("3_mwggt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8955021, 12.048722, 2.9367862)
+
+[node name="Prop_test_big10" parent="Props" instance=ExtResource("3_mwggt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4132576, 15.165357, 2.9367862)
+
+[node name="RandomTerrainGeneration" parent="." instance=ExtResource("4_mwggt")]
+max_pieces = 10

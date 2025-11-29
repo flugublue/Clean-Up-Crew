@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu48s0v3kp5b"]
+
+[ext_resource type="Script" uid="uid://j16mhyffl5du" path="res://Scripts/UI/UiManager/UiManager.gd" id="1_j7ny8"]
+[ext_resource type="PackedScene" uid="uid://cvcdxo4g53kt7" path="res://scenes/UI/UiIndicators/UIindicators.tscn" id="2_j7ny8"]
+
+[node name="Ui" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_j7ny8")
+
+[node name="UiElements" type="CanvasLayer" parent="."]
+
+[node name="Indicators" parent="UiElements" instance=ExtResource("2_j7ny8")]

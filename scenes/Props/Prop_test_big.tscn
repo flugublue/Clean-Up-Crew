@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://gu7c608ic8j4"]
+
+[ext_resource type="Script" uid="uid://c3wt5vpjkyqof" path="res://Scripts/Props/Main_props.gd" id="1_gp8k8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gp8k8"]
+
+[node name="Prop_test_big" type="RigidBody3D"]
+mass = 10.0
+linear_damp = 1.0
+angular_damp = 3.0
+script = ExtResource("1_gp8k8")
+is_grabbable = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_gp8k8")

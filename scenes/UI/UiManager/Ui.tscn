@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://qmay4snyso25"]
+
+[ext_resource type="Script" uid="uid://j16mhyffl5du" path="res://Scripts/UI/UiManager/UiManager.gd" id="1_j7ny8"]
+[ext_resource type="Texture2D" uid="uid://xhpvgjj0taui" path="res://Assets/Ui/Img/Grab/yoooooo.png" id="1_r4y0j"]
+
+[node name="Ui" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_j7ny8")
+
+[node name="UiElements" type="CanvasLayer" parent="."]
+
+[node name="Indicators" type="MarginContainer" parent="UiElements"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UiElements/Indicators"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UiElements/Indicators/MarginContainer"]
+self_modulate = Color(1, 1, 1, 0.101960786)
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_r4y0j")
+region_rect = Rect2(0, 0, 523.1017, 534.74866)

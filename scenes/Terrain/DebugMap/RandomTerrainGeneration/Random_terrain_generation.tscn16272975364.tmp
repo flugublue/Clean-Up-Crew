@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://d012ebu82jtgx"]
+
+[ext_resource type="Script" uid="uid://cgeg2yylxj65x" path="res://Scripts/Map/MapGeneration/MapGenerationScript/Map_generation_script.gd" id="1_u4qx0"]
+[ext_resource type="PackedScene" uid="uid://c4cgml8tx16js" path="res://scenes/Terrain/DebugMap/Rooms/StartRoom/Starter_room.tscn" id="3_nm057"]
+
+[node name="RandomTerrainGeneration" type="Node3D"]
+script = ExtResource("1_u4qx0")
+corridors_folder = "res://scenes/Terrain/DebugMap/Rooms/Corridors"
+starter_room = ExtResource("3_nm057")

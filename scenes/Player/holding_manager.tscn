@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhrij1c030p6s"]
+
+[ext_resource type="Script" uid="uid://tp0026btmc77" path="res://Scripts/Player/Grab/GrabManager.gd" id="1_ofroo"]
+
+[node name="HoldingManager" type="Node"]
+script = ExtResource("1_ofroo")
