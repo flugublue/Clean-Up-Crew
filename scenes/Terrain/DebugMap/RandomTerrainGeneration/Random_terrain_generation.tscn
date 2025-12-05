@@ -1,15 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://c70qmpd5ifuyk"]
 
-[ext_resource type="MeshLibrary" uid="uid://bfg6eo21fe3g4" path="res://scenes/Terrain/DebugMap/MapData/GridMapLibrary/DebugMapLibrary.tres" id="1_30kdt"]
 [ext_resource type="Script" uid="uid://cgeg2yylxj65x" path="res://Scripts/Map/MapGeneration/MapGenerationScript/Map_generation_script.gd" id="1_i0t4d"]
+[ext_resource type="PackedScene" uid="uid://drq8sow6amjy3" path="res://scenes/Terrain/DebugMap/MapData/GridMapLibrary/Grid_library.tscn" id="3_oku30"]
 
-[node name="RandomTerrainGeneration" type="Node3D" node_paths=PackedStringArray("grid_map")]
+[node name="RandomTerrainGeneration" type="Node3D" node_paths=PackedStringArray("terrain_container", "grid_library")]
 script = ExtResource("1_i0t4d")
-dead_end_frequency = 0.1
-grid_map = NodePath("GridMap")
+terrain_container = NodePath("Terrain_container")
+grid_library = NodePath("GridLibrary")
 
-[node name="GridMap" type="GridMap" parent="."]
-mesh_library = ExtResource("1_30kdt")
-data = {
-"cells": PackedInt32Array(0, 0, 0, 10, 0, 1, 0, 65526, 1, 65526, 0, 1, 0, 10, 1, 65516, 0, 0, 65516, 10, 1, 65506, 0, 1, 65516, 65526, 1, 65516, 65516, 1, 65516, 65506, 0, 65516, 65496, 1, 65506, 65506, 1, 65526, 65506, 1, 65496, 65506, 1, 65496, 0, 1, 65516, 20, 0, 65506, 20, 1, 65516, 30, 1, 65526, 20, 1, 0, 20, 1, 10, 20, 1, 20, 20, 1, 30, 20, 0, 30, 30, 1, 40, 20, 0, 30, 10, 1, 40, 30, 1, 40, 10, 1, 50, 20, 1, 30, 40, 1, 30, 50, 0, 30, 60, 1, 40, 50, 1, 20, 50, 1, 10, 50, 1, 65516, 40, 1, 65516, 50, 0, 65526, 50, 1, 65506, 50, 0, 65516, 60, 1, 65496, 50, 1, 65506, 40, 1, 65506, 60, 1, 65506, 30, 1, 0, 50, 1, 0, 65516, 0, 10, 65516, 1, 65526, 65516, 1, 0, 65506, 1, 0, 65496, 0, 65526, 65496, 0, 0, 65486, 1, 10, 65496, 1, 65526, 65486, 0, 65516, 65486, 1, 65526, 65476, 0, 0, 65476, 1, 65516, 65476, 1, 65526, 65466, 1, 20, 65516, 0, 30, 65516, 1, 20, 65526, 0, 20, 65506, 0, 10, 65506, 0, 20, 65496, 1, 30, 65506, 0, 40, 65506, 1, 30, 65496, 1, 20, 65486, 1, 30, 65526, 0, 10, 65526, 0, 20, 0, 1, 20, 10, 1, 40, 65526, 1, 30, 0, 1, 40, 65516, 0, 50, 65516, 1)
-}
+[node name="GridLibrary" parent="." instance=ExtResource("3_oku30")]
+
+[node name="Terrain_container" type="Node" parent="."]

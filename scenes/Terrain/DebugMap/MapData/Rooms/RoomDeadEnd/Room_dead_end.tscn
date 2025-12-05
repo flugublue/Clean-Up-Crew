@@ -1,15 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://byl7quavylx2s"]
+[gd_scene load_steps=5 format=3 uid="uid://b2r3kd0fno2ro"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_0rv2n"]
+[ext_resource type="Script" uid="uid://3fvt3tmb30ax" path="res://Scripts/Map/MapGeneration/Utils/RoomScript/Room_script.gd" id="1_0oc7e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0oc7e"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_0oc7e"]
+material = SubResource("StandardMaterial3D_0oc7e")
 size = Vector3(20, 1, 20)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_kc5vw"]
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0oc7e"]
 data = PackedVector3Array(-10, 0.5, 10, 10, 0.5, 10, -10, -0.5, 10, 10, 0.5, 10, 10, -0.5, 10, -10, -0.5, 10, 10, 0.5, -10, -10, 0.5, -10, 10, -0.5, -10, -10, 0.5, -10, -10, -0.5, -10, 10, -0.5, -10, 10, 0.5, 10, 10, 0.5, -10, 10, -0.5, 10, 10, 0.5, -10, 10, -0.5, -10, 10, -0.5, 10, -10, 0.5, -10, -10, 0.5, 10, -10, -0.5, -10, -10, 0.5, 10, -10, -0.5, 10, -10, -0.5, -10, 10, 0.5, 10, -10, 0.5, 10, 10, 0.5, -10, -10, 0.5, 10, -10, 0.5, -10, 10, 0.5, -10, -10, -0.5, 10, 10, -0.5, 10, -10, -0.5, -10, 10, -0.5, 10, 10, -0.5, -10, -10, -0.5, -10)
 
-[node name="RoomDefault" type="MeshInstance3D"]
-mesh = SubResource("BoxMesh_0rv2n")
+[node name="RoomDeadEnd" type="MeshInstance3D"]
+mesh = SubResource("BoxMesh_0oc7e")
+script = ExtResource("1_0oc7e")
+connections = Array[Vector2i]([Vector2i(1, 0)])
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_kc5vw")
+shape = SubResource("ConcavePolygonShape3D_0oc7e")
