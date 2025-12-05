@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ciojn1nj6uw16"]
+[gd_scene load_steps=7 format=3 uid="uid://ciojn1nj6uw16"]
 
+[ext_resource type="PackedScene" uid="uid://cinube4tmi1b4" path="res://scenes/Terrain/DebugMap/MapData/Rooms/StartRoom/Starter_room.tscn" id="2_2ittr"]
 [ext_resource type="PackedScene" uid="uid://t3c3xnckcie3" path="res://scenes/Player/Player_character.tscn" id="2_fpg18"]
-[ext_resource type="PackedScene" uid="uid://c70qmpd5ifuyk" path="res://scenes/Terrain/DebugMap/RandomTerrainGeneration/Random_terrain_generation.tscn" id="4_mwggt"]
+[ext_resource type="PackedScene" uid="uid://gu7c608ic8j4" path="res://scenes/Props/Prop_test_big.tscn" id="3_fpg18"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mwggt"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -25,8 +26,10 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_1mcn3")
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("2_fpg18")]
+[node name="PlayerCharacter" parent="." instance=ExtResource("2_fpg18")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.076555, -1.236691)
 
-[node name="RandomTerrainGeneration" parent="." instance=ExtResource("4_mwggt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10.14003, 0)
+[node name="StarterRoom" parent="." instance=ExtResource("2_2ittr")]
+
+[node name="Prop_test_big" parent="." instance=ExtResource("3_fpg18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.977339, -4.1628304)

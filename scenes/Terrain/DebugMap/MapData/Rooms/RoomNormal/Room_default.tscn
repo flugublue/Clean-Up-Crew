@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://byl7quavylx2s"]
 
-[ext_resource type="Script" uid="uid://3fvt3tmb30ax" path="res://Scripts/Map/MapGeneration/Utils/RoomScript/Room_script.gd" id="1_76mft"]
+[ext_resource type="Script" uid="uid://3fvt3tmb30ax" path="res://Scripts/Map/MapGeneration/Utils/RoomScript/MainRoomScript/Room_script.gd" id="1_76mft"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_76mft"]
 

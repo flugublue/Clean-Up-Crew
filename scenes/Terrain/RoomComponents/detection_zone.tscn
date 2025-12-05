@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://di0p0ju1okio1"]
+
+[ext_resource type="Script" uid="uid://lpwb1exce6ym" path="res://Scripts/Map/MapGeneration/Utils/RoomScript/DetectionComponeent/DectionZone/detection_zone.gd" id="1_660eo"]
+[ext_resource type="Script" uid="uid://cjx8sufomdras" path="res://Scripts/Map/MapGeneration/Utils/RoomScript/DetectionComponeent/DetectionArea/detection_area.gd" id="2_mt0dd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_14j1x"]
+size = Vector3(20, 100, 20)
+
+[node name="DetectionZone" type="Node3D"]
+script = ExtResource("1_660eo")
+collisionShape3D = SubResource("BoxShape3D_14j1x")
+
+[node name="DetectionArea" type="Area3D" parent="."]
+script = ExtResource("2_mt0dd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea"]
+shape = SubResource("BoxShape3D_14j1x")
+
+[connection signal="number_of_objects" from="DetectionArea" to="." method="_on_detection_area_number_of_objects"]
+[connection signal="number_of_players" from="DetectionArea" to="." method="_on_detection_area_number_of_players"]

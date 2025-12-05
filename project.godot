@@ -20,6 +20,12 @@ config/icon="res://icon.svg"
 GlobalValues="*res://Scripts/Globals/GlobalValues/Global_values.gd"
 GlobalSignals="*res://Scripts/Globals/GlobalSignals/GlobalSignals.gd"
 
+[global_group]
+
+Room_collision_shape="Contains all the collision shape of the room, so to avoid detecting them further down the lines in area 3Ds"
+Player="Contains the players"
+Prop="Contains all the props"
+
 [input]
 
 Move_forward={

@@ -4,7 +4,7 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gp8k8"]
 
-[node name="Prop_test_big" type="RigidBody3D"]
+[node name="Prop_test_big" type="RigidBody3D" groups=["Prop"]]
 mass = 10.0
 linear_damp = 1.0
 angular_damp = 3.0

@@ -12,13 +12,6 @@ extends Node3D
 @export var grid_library      : Node 
 
 @export_group("Editor Action") 
-@export var generate_button := false: 
-	set(value): 
-		generate_button = false 
-		load_needed_values() 
-		generate_terrain() 
-		notify_property_list_changed() 
-
 @export var reset_terrain := false: 
 	set(value): 
 		reset_terrain = false 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b2r3kd0fno2ro"]
 
-[ext_resource type="Script" uid="uid://3fvt3tmb30ax" path="res://Scripts/Map/MapGeneration/Utils/RoomScript/Room_script.gd" id="1_0oc7e"]
+[ext_resource type="Script" uid="uid://3fvt3tmb30ax" path="res://Scripts/Map/MapGeneration/Utils/RoomScript/MainRoomScript/Room_script.gd" id="1_0oc7e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0oc7e"]
 
@@ -18,5 +18,5 @@ connections = Array[Vector2i]([Vector2i(1, 0)])
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" groups=["Room_collision_shape"]]
 shape = SubResource("ConcavePolygonShape3D_0oc7e")
