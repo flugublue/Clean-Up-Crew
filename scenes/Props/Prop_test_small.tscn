@@ -5,7 +5,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_6rxlc"]
 size = Vector3(0.1, 0.1, 0.1)
 
-[node name="Prop_test_small" type="RigidBody3D"]
+[node name="Prop_test_small" type="RigidBody3D" groups=["Prop"]]
 linear_damp = 1.0
 angular_damp = 3.0
 script = ExtResource("1_3tqlr")

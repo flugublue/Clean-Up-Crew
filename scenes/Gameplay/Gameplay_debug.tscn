@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://ciojn1nj6uw16"]
+[gd_scene load_steps=10 format=3 uid="uid://ciojn1nj6uw16"]
 
+[ext_resource type="PackedScene" uid="uid://c70qmpd5ifuyk" path="res://scenes/Terrain/DebugMap/RandomTerrainGeneration/Random_terrain_generation.tscn" id="1_mwggt"]
+[ext_resource type="Script" uid="uid://cl7hscosg6dei" path="res://Scripts/Gameplay/gameplay_debug.gd" id="1_wxtdc"]
 [ext_resource type="PackedScene" uid="uid://cinube4tmi1b4" path="res://scenes/Terrain/DebugMap/MapData/Rooms/StartRoom/Starter_room.tscn" id="2_2ittr"]
 [ext_resource type="PackedScene" uid="uid://t3c3xnckcie3" path="res://scenes/Player/Player_character.tscn" id="2_fpg18"]
 [ext_resource type="PackedScene" uid="uid://gu7c608ic8j4" path="res://scenes/Props/Prop_test_big.tscn" id="3_fpg18"]
+[ext_resource type="PackedScene" uid="uid://p0eesjbvm6y3" path="res://scenes/Props/Prop_test_small.tscn" id="5_1mcn3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mwggt"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -18,6 +21,9 @@ tonemap_mode = 2
 glow_enabled = true
 
 [node name="Gameplay_debug" type="Node3D"]
+script = ExtResource("1_wxtdc")
+
+[node name="RandomTerrainGeneration" parent="." instance=ExtResource("1_mwggt")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.762896, 0.5521837, -0.3362783, 0.0047161416, 0.52487403, 0.85116696, 0.6465041, 0.64776576, -0.4030284, 0, 11.312822, 0)
@@ -30,6 +36,9 @@ environment = SubResource("Environment_1mcn3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.076555, -1.236691)
 
 [node name="StarterRoom" parent="." instance=ExtResource("2_2ittr")]
+
+[node name="Prop_test_small" parent="." instance=ExtResource("5_1mcn3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.3668165, -0.29654884)
 
 [node name="Prop_test_big" parent="." instance=ExtResource("3_fpg18")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.977339, -4.1628304)

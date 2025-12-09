@@ -18,6 +18,8 @@ extends Node3D
 signal current_number_of_objects(object_count : int)
 signal current_number_of_players(player_count : int)
 
+func _ready():
+	current_number_of_objects.connect(GlobalValues.set_room_props)
 
 func _on_detection_area_number_of_objects(object_count: int) -> void:
 	current_number_of_objects.emit(object_count)

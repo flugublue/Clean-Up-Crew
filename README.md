@@ -55,4 +55,3 @@ Each commits should start with the naming of the branch it is done in. A boiled 
 Combat system - added recoil "Now shooting a weapon does blablabla..."
 
 Do not commit everything you do. Except in the case of hot fixes / bug correction then just wait until you've done a substential amount of work. It makes it easier to track everything that's going on 
-
